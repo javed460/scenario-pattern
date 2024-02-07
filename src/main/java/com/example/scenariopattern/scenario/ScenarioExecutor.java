@@ -6,7 +6,6 @@ import com.example.scenariopattern.domain.ScenarioEvents;
 import com.example.scenariopattern.dto.OrderDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,7 +16,6 @@ import static com.example.scenariopattern.domain.ScenarioEvents.noEvents;
 @RequiredArgsConstructor
 public class ScenarioExecutor {
     private final OrderScenarioInitializer orderScenarioInitializer;
-    private final ApplicationEventPublisher eventPublisher;
 
     public List<OrderEvents> executeOrderScenario (OrderDTO orderDTO) {
         OrderScenario incomingOrder = new OrderScenario();
